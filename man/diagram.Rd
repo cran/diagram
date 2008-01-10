@@ -17,8 +17,8 @@ Visualises simple graphs (networks) based on a transition matrix, utilities to p
   \tabular{ll}{
     Package: \tab diagram\cr
     Type: \tab Package\cr
-    Version: \tab 1.2\cr
-    Date: \tab 2008-07-21\cr
+    Version: \tab 1.3\cr
+    Date: \tab 2008-10-14\cr
     License: \tab GNU Public License 2 or above\cr
   }
 This package is used in R-package ecolMod, which includes many more examples.

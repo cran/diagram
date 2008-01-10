@@ -1,6 +1,6 @@
 Package: diagram
-Version: 1.2
-Date: 2008-07-21
+Version: 1.3
+Date: 2008-01-10
 Title: Functions for visualising simple graphs (networks), plotting flow diagrams
 Author: Karline Soetaert <k.soetaert@nioo.knaw.nl>
 Maintainer: Karline Soetaert <k.soetaert@nioo.knaw.nl>
@@ -13,4 +13,4 @@ Description: Visualises simple graphs (networks) based on a transition matrix, u
      Includes demo(flowchart), demo(plotmat), demo(plotweb)
 License: GPL
 LazyData: yes
-Packaged: Fri Aug  8 15:32:46 2008; KarlineS
+Packaged: Tue Oct 14 16:12:46 2008; karlines

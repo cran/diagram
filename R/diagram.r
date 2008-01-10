@@ -615,7 +615,7 @@ plotmat <- function(A,                      # coefficient matrix (rows=to,cols=f
             arr.length=arr.length*0.5,arr.width=arr.width,lwd=arr.lwd,arr.type=arr.type)
      DD   <- rbind(DD,c(ell[nrow(ell),1],ell[nrow(ell),2]))  
 # karline: suggestion from Yvonnic NOEL: evaluate expressions
-     if(cex.txt>0) text(mid[1],mid[2],parse(text=txt),adj=c(0.5,0.5),cex=cex.txt)
+     if(cex.txt>0 && txt!= "") text(mid[1],mid[2],parse(text=txt),adj=c(0.5,0.5),cex=cex.txt)
      TT <- rbind(TT,c(mid[1],mid[2],0.5,0.5))
      cycle
    
@@ -638,7 +638,7 @@ plotmat <- function(A,                      # coefficient matrix (rows=to,cols=f
        if (angle>0) adj=c(0,1)
        mpos <- mid1- (adj-0.5)* drad  
 # karline: suggestion from Yvonnic NOEL: evaluate expressions
-       if(cex.txt>0) text(mpos[1],mpos[2],parse(text=txt),adj=adj,cex=cex.txt)
+       if(cex.txt>0&& txt!= "") text(mpos[1],mpos[2],parse(text=txt),adj=adj,cex=cex.txt)
        TT <- rbind(TT,c(mpos[1],mpos[2],adj))
      } else          # curved line
 
@@ -662,7 +662,7 @@ plotmat <- function(A,                      # coefficient matrix (rows=to,cols=f
        ell <- getellipse(rx=dst/2,ry=ry+drad,mid=mid,angle=angle,      
                         from=meanpi,to=meanpi)
 # karline: suggestion from Yvonnic NOEL: evaluate expressions
-       if(cex.txt>0) text(ell[1,1],ell[1,2],parse(text=txt),adj=adj,cex=cex.txt)
+       if(cex.txt>0&& txt!= "") text(ell[1,1],ell[1,2],parse(text=txt),adj=adj,cex=cex.txt)
        TT <- rbind(TT,c(ell[1,1],ell[1,2],adj))
      } 
     }   # end i
@@ -733,6 +733,7 @@ plotweb    <- function (flowmat,             # flow matrix, rows=flow from, colu
                         minarrow = 1,        # minimal thickness of arrow
                         length=0.1,          # length of the edges of the arrow head (in inches)
                         dcirc=1.2,           # if cannibalism, offset of circular 'arrow' - if dcirc=0:no circle drawn
+                        bty = "o",           # type of legend box, one of "o" or "n"
                         ...)                 # extra arguments passed to R-function arrows
 
 {
@@ -840,7 +841,7 @@ plotweb    <- function (flowmat,             # flow matrix, rows=flow from, colu
          size <- minarrow + darrow * (abs(fsize)-minflow) # arrow thickness
                               
 			   if (i != j) arrows (x1+dr*dx,y1+dr*dy,x2-dr*dx,y2-dr*dy,
-                             length=length,code=code,lwd=size,col=arr.col) 
+                             length=length,code=code,lwd=size,col=arr.col,...)
 			   if (i == j) circle (i,lwd=size,col=arr.col)
          if (val) 
           {
@@ -865,7 +866,7 @@ plotweb    <- function (flowmat,             # flow matrix, rows=flow from, colu
 
     legend("bottomright",legend=c(format.pval(tmax,leg.digit),
            format.pval(tmin,leg.digit)),cex=sizeleg,title=title,
-           lwd=c(maxarrow,minarrow))
+           lwd=c(maxarrow,minarrow),bty=bty)
    }
 
   if (!val & !budget) return   
@@ -878,7 +879,8 @@ plotweb    <- function (flowmat,             # flow matrix, rows=flow from, colu
        yaxt = "n", frame.plot = FALSE,main="",xlab="")
   } 
     
-  if (val) legend("topright",legend=ltext,cex=val.size,title=val.title,ncol=val.ncol)
+  if (val) legend("topright",legend=ltext,cex=val.size,
+           title=val.title,ncol=val.ncol,bty=bty)
 
   if (budget)
   {
@@ -886,7 +888,8 @@ plotweb    <- function (flowmat,             # flow matrix, rows=flow from, colu
     # sum all flows in - sum of flow out 
    for (i in 1:numcomp) rate <- c(rate,paste(components[i], ":", 
                        format.pval(sum(flowmat[,i])-sum(flowmat[i,]),bud.digit)))
-   legend("topleft",legend=rate,cex=bud.size,title=bud.title,ncol=bud.ncol)
+   legend("topleft",legend=rate,cex=bud.size,title=bud.title,
+          ncol=bud.ncol,bty=bty)
   }
       par("mar"=nm)
 }  ########## END OF plotweb  ########## 

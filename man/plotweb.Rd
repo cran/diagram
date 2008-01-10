@@ -8,7 +8,7 @@
   arr.col="black",val=FALSE,val.digit=5,val.size=0.6,val.col="red", 
   val.title=NULL,val.ncol=1,budget=FALSE,bud.digit=5,bud.size=0.6, 
   bud.title="budget",bud.ncol=1,maxarrow=10,minarrow=1,length=0.1, 
-  dcirc=1.2, ...)}
+  dcirc=1.2,bty="o", ...)}
 \arguments{
   \item{flowmat }{flow matrix, rows=flow *from*, columns=flow *to*}
   \item{names }{string vector with the names of components}
@@ -42,6 +42,7 @@
   \item{minarrow }{minimal thickness of arrow}
   \item{length }{length of the edges of the arrow head (in inches)}
   \item{dcirc }{if cannibalism (flow from i to i), offset of circular 'arrow' - if dcirc=0:no circle drawn}
+  \item{bty }{the type of box to be drawn around the legends (legend, val, budget). The allowed values are "o" (the default) and "n".}
   \item{... }{extra arguments passed to R-function arrows}
 }
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}

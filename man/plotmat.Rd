@@ -24,8 +24,8 @@
   \item{relsize }{scaling factor for size of the graph}
   \item{lwd }{default line width of arrow and box}
   \item{lcol }{default color of arrow line and box line}
-  \item{box.size }{size of label box}
-  \item{box.type }{shape of label box}
+  \item{box.size }{size of label box }
+  \item{box.type }{shape of label box (rect, ellipse, diamond, round, hexa, multi)}
   \item{box.prop }{length/width ratio of label box}
   \item{box.col }{fill color of label box}
   \item{box.lcol }{line color of label box}
