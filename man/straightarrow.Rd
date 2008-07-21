@@ -19,7 +19,8 @@
   coordinates (x,y) where arrowhead is drawn
 }
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}
-\examples{openplotmat(main="straightarrow")
+\examples{
+    openplotmat(main="straightarrow")
     pos <-coordinates(c(2,3,1))
     for (i in 1:5) straightarrow(from=pos[i,],to=pos[i+1,],arr.pos=0.5)
     for (i in 1:6) textrect(pos[i,],lab=LETTERS[i],radx=0.05)}

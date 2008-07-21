@@ -18,7 +18,8 @@
 \format{matrix with transition probabilities, where element ij denotes transition from compartment j to i
   \cr rownames and columnames are the component names}
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}
-\examples{curves <- matrix(nrow=ncol(Teasel),ncol=ncol(Teasel),0)
+\examples{
+  curves <- matrix(nrow=ncol(Teasel),ncol=ncol(Teasel),0)
   curves[3,1]<- curves[1,6]<- -0.35
   curves[4,6]<-curves[6,4]<-curves[5,6]<-curves[6,5]<-0.08
   curves[3,6]<-  0.35

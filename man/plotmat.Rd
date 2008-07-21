@@ -72,7 +72,8 @@
   \item{rect }{the "xleft","ybot","xright",and "ytop" of the boxes - redundant}
 }
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}
-\examples{M <- matrix(nrow=4,ncol=4,byrow=TRUE,data=0)
+\examples{
+  M <- matrix(nrow=4,ncol=4,byrow=TRUE,data=0)
   pp<-plotmat(M,pos=c(1,2,1),name=c("A","B","C","D"),lwd=1,box.lwd=2,
               cex.txt=0.8,box.size=0.1,box.type="square",box.prop=0.5,
               main="plotmat")
@@ -89,7 +90,22 @@
   M[2,1]<-1  ;M[4,2]<-2;M[3,4]<-3;M[1,3]<-4
   pp<-plotmat(M,pos=c(1,2,1),curve=0.2,name=letters[1:4],lwd=1,box.lwd=2,
               cex.txt=0.8,arr.type="triangle",box.size=0.1,box.type="hexa",
-              box.prop=0.5,main="plotmat")}
+              box.prop=0.5,main="plotmat")
+
+  M <- matrix(nrow=4,ncol=4,byrow=TRUE,data=0)
+  M     <- as.data.frame(M)
+  M[[2,1]]<- "k[si]"
+  M[[3,1]]<- "k[N]"
+  M[[4,2]]<- "sqrt(frac(2,3))"
+
+  names <-
+  c(expression(lambda[12]),"?",expression(lambda[13]),expression(lambda[23]))
+
+  pp<-plotmat(M,pos=c(1,2,1),name=names,lwd=1,box.lwd=2, curve=0,
+              cex.txt=0.8,box.size=0.1,box.type="square",box.prop=0.5,
+              main="plotmat")
+
+              }
 \details{The square transition matrix A determines the number of elements of A (rows of A)
      and which elements are connected (all values in A different from "absent").
      \cr A also provides the values of arrowlabels.  

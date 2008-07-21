@@ -614,7 +614,8 @@ plotmat <- function(A,                      # coefficient matrix (rows=to,cols=f
      Arrows(ell[1,1],ell[1,2],ell[nrow(ell),1],ell[nrow(ell),2],arr.col=arr.col,
             arr.length=arr.length*0.5,arr.width=arr.width,lwd=arr.lwd,arr.type=arr.type)
      DD   <- rbind(DD,c(ell[nrow(ell),1],ell[nrow(ell),2]))  
-     if(cex.txt>0) text(mid[1],mid[2],txt,adj=c(0.5,0.5),cex=cex.txt)
+# karline: suggestion from Yvonnic NOEL: evaluate expressions
+     if(cex.txt>0) text(mid[1],mid[2],parse(text=txt),adj=c(0.5,0.5),cex=cex.txt)
      TT <- rbind(TT,c(mid[1],mid[2],0.5,0.5))
      cycle
    
@@ -636,7 +637,8 @@ plotmat <- function(A,                      # coefficient matrix (rows=to,cols=f
        DD <- rbind(DD,mid1)            
        if (angle>0) adj=c(0,1)
        mpos <- mid1- (adj-0.5)* drad  
-       if(cex.txt>0) text(mpos[1],mpos[2],txt,adj=adj,cex=cex.txt)  
+# karline: suggestion from Yvonnic NOEL: evaluate expressions
+       if(cex.txt>0) text(mpos[1],mpos[2],parse(text=txt),adj=adj,cex=cex.txt)
        TT <- rbind(TT,c(mpos[1],mpos[2],adj))
      } else          # curved line
 
@@ -659,7 +661,8 @@ plotmat <- function(A,                      # coefficient matrix (rows=to,cols=f
        DD <- rbind(DD,c(ell[nrow(ell),1],ell[nrow(ell),2]))           
        ell <- getellipse(rx=dst/2,ry=ry+drad,mid=mid,angle=angle,      
                         from=meanpi,to=meanpi)
-       if(cex.txt>0) text(ell[1,1],ell[1,2],txt,adj=adj,cex=cex.txt)
+# karline: suggestion from Yvonnic NOEL: evaluate expressions
+       if(cex.txt>0) text(ell[1,1],ell[1,2],parse(text=txt),adj=adj,cex=cex.txt)
        TT <- rbind(TT,c(ell[1,1],ell[1,2],adj))
      } 
     }   # end i
@@ -747,9 +750,12 @@ plotweb    <- function (flowmat,             # flow matrix, rows=flow from, colu
   numcomp    <- length(components)  ## number of food web components
   if (ncol(flowmat) != numcomp) stop("flowmat and names not compatible")
 
-  flowmatrix <- flowmat 
-  if (!is.null(nullflow )) flowmatrix[flowmatrix<nullflow ] <- 0
-  zero <- 0  
+  flowmatrix <- flowmat
+  if (!is.null(nullflow )) {
+    flowmatrix[flowmatrix<nullflow[1] ] <- 0
+    if (length(nullflow == 2)) flowmatrix[flowmatrix>nullflow[2] ] <- 0   }
+
+  zero <- 0
   if (log) {flowmatrix <- log10(flowmatrix +1e-20); flowmatrix[flowmatrix==-20]<-0 }
 
   if (is.null(maxflow)) maxflow  <- max(flowmatrix) else 
@@ -790,7 +796,9 @@ plotweb    <- function (flowmat,             # flow matrix, rows=flow from, colu
 		    if (abs(xl[i]) < 0.0001) adjustx = 0.5
   	    if (    yl[i]  > 0     ) adjusty = 0
 		    if (    yl[i]  < 0     ) adjusty = 1
-        text(xl[i], yl[i], components[i], 
+# karline: bug fix - 06-03-2008
+		    if (abs(yl[i]) < 0.0001) adjusty = 0.5
+        text(xl[i], yl[i], components[i],
               adj =c(adjustx,adjusty), cex = par("cex") * lab.size)
                         }
 

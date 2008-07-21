@@ -20,7 +20,8 @@
   coordinates (x,y) where arrowhead is drawn
 }
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}
-\examples{openplotmat(main="bentarrow")
+\examples{
+  openplotmat(main="bentarrow")
   pos <-cbind(A<-seq(0.1,0.9,by=0.2),rev(A))
   text(pos,LETTERS[1:5],cex=2)
   for (i in 1:4) bentarrow(from=pos[i,]+c(0.05,0),to=pos[i+1,]+c(0,0.05),

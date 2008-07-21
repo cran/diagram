@@ -21,7 +21,8 @@
   coordinates (x,y) where arrowhead is drawn
 }
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}
-\examples{openplotmat(main="segmentarrow")
+\examples{
+  openplotmat(main="segmentarrow")
   pos <-cbind(A<-seq(0.2,0.8,by=0.2),rev(A))
   text(pos,LETTERS[1:4],cex=2)
   segmentarrow(from=pos[1,]+c(0,0.05),to=pos[2,]+c(0,0.05),arr.pos=1,

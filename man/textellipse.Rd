@@ -22,7 +22,8 @@
   \item{... }{other arguments passed to function textplain}
 }
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}
-\examples{openplotmat(xlim=c(-0.1,1.1),main="textellipse")
+\examples{
+  openplotmat(xlim=c(-0.1,1.1),main="textellipse")
   for (i in 1:10) textellipse(mid=runif(2),col=i,box.col=grey(0.95),radx=0.1,
                           rady=0.05,lab=LETTERS[i],cex=2,angle=runif(1)*360)}
 \details{see \code{\link{shadowbox}} for specifications of the ellipsoid-shaped box and its shadow}

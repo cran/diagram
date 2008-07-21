@@ -20,7 +20,8 @@
   coordinates (x,y) where arrowhead is drawn
 }
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}
-\examples{openplotmat(main="selfarrow")
+\examples{
+  openplotmat(main="selfarrow")
   pos <- coordinates(3,mx=0.05)
   text(pos,LETTERS[1:3],cex=2)
   for (i in 1:3) selfarrow(pos=pos[i,],path="R",arr.pos=0.2,

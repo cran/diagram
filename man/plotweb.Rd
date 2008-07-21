@@ -19,7 +19,7 @@
   \item{sub }{if add= FALSE: sub title}
   \item{sub2 }{if add= FALSE: title in bottom}
   \item{log }{logical indicating whether to scale the flow values logarithmically}
-  \item{nullflow }{below this value; flow is assumed 0 and the arrow is not drawn}
+  \item{nullflow }{either one value or a two-valued vector; if flow < nullflow[1] or flow > nullflow[2] (if two values): flow is assumed = 0 and the arrow is not drawn}
   \item{minflow }{flowvalue corresponding to minimum arrow thickness}
   \item{maxflow }{flowvalue corresponding to maximum arrow thickness}
   \item{legend }{logical indicating whether to add a legend with arrow thickness}
@@ -45,9 +45,10 @@
   \item{... }{extra arguments passed to R-function arrows}
 }
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}
-\examples{plotweb(Rigaweb,main="Gulf of Riga food web",sub="mgC/m3/d",val=TRUE)
+\examples{
+  plotweb(Rigaweb,main="Gulf of Riga food web",sub="mgC/m3/d",val=TRUE)
   plotweb(diag(20),main="plotweb")}
-\details{This function is less flexible than function \code{\link{plotmat}}, which should be used preferentially
+\details{This function is less flexible than function \code{\link{plotmat}}
     \cr It was created for visualisation of food web flows, that are inputted as a flow matrix. 
     \cr It displays the elements on a circle, and where there is a mass flow, two elements are connected, 
     \cr the magnitude of the web flows is reflected by the thickness of the arrow

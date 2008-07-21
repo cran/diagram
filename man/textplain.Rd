@@ -11,7 +11,8 @@
   \item{... }{other arguments passed to R-function text}
 }
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}
-\examples{openplotmat(main="textplain")
+\examples{
+  openplotmat(main="textplain")
   textplain(mid=c(0.5,0.5), 
             lab=c("this text is","centered", "4 strings", "on 4 lines"))
   textplain(mid=c(0.5,0.2), adj=c(0,0.5), font=2, height=0.05,

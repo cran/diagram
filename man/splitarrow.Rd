@@ -21,7 +21,8 @@
   coordinates (x,y) where arrowheads are drawn
 }
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}
-\examples{openplotmat(main="splitarrow")
+\examples{
+  openplotmat(main="splitarrow")
   pos <- coordinates(c(1,2,2,4,1))
   splitarrow(from=pos[1,],to=pos[2:10,],arr.side=1,centre=c(0.5,0.625))
   for (i in 1:10) textrect(pos[i,],lab=i,cex=2,radx=0.05)

@@ -20,7 +20,8 @@
   \item{... }{other arguments passed to function textplain}
 }
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}
-\examples{openplotmat(xlim=c(-0.1,1.1),main="textdiamond")
+\examples{
+  openplotmat(xlim=c(-0.1,1.1),main="textdiamond")
   for (i in 1:10) textdiamond(mid=runif(2),col=i,radx=0.1,rady=0.05,
                               lab=LETTERS[i],cex=2,angle=runif(1)*360)}
 \details{see \code{\link{shadowbox}} for specifications of the diamond-shaped box and its shadow}

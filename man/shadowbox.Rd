@@ -23,7 +23,8 @@
   \item{... }{other arguments}
 }
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}
-\examples{openplotmat(main="shadowbox")
+\examples{
+    openplotmat(main="shadowbox")
     shadowbox(box.type="rect",mid=c(0.1,0.5),rady=0.1,radx=0.05,angle=25)
     shadowbox(box.type="round",mid=c(0.3,0.5),rady=0.05,radx=0.025,angle=90,
               shadow.col="darkred")

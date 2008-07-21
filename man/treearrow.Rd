@@ -21,7 +21,8 @@
   coordinates (x,y) where arrowhead is drawn
 }
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}
-\examples{openplotmat(main="treearrow")
+\examples{
+  openplotmat(main="treearrow")
   pos <- coordinates(c(3,2,4,1))
   treearrow(from=pos[1:5,],to=pos[6:10,])
   for (i in 1:10) textrect(pos[i,],lab=i,cex=2,radx=0.05)

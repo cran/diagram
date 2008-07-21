@@ -21,7 +21,8 @@
   \item{... }{other arguments passed to function textplain}
 }
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}
-\examples{openplotmat(xlim=c(-0.1,1.1),main="textrect")
+\examples{
+  openplotmat(xlim=c(-0.1,1.1),main="textrect")
   for (i in 1:10) textrect(mid=runif(2),col=i,radx=0.1,rady=0.1,
                            lab=LETTERS[i],cex=2)}
 \details{see \code{\link{shadowbox}} for specifications of the rectangular box and its shadow}

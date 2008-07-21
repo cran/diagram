@@ -16,7 +16,8 @@
   2-columned matrix, with coordinates (x,y) of each of the elements
 }
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}
-\examples{openplotmat(main="coordinates")
+\examples{
+  openplotmat(main="coordinates")
   text(coordinates(N=6),lab=LETTERS[1:6],cex=2)
   text(coordinates(N=8,relsize=0.5),lab=letters[1:8],cex=2)
   openplotmat(main="coordinates")

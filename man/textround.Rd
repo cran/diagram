@@ -22,7 +22,8 @@
   \item{... }{other arguments passed to function textplain}
 }
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}
-\examples{openplotmat(xlim=c(-0.1,1.1),main="textround")
+\examples{
+  openplotmat(xlim=c(-0.1,1.1),main="textround")
   for (i in 1:10) textround(mid=runif(2),col=i,radx=0.03,rady=0.075,
                             lab=LETTERS[i],cex=2)}
 \details{see \code{\link{shadowbox}} for specifications of the box and its shadow}
