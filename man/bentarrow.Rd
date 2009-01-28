@@ -35,19 +35,21 @@
 \details{a two-segmented arrow is drawn between two points '(from, to)'
     
     how the segments are drawn is set with "path" which can take on the values:
+  \itemize{
     \item H:   (horizontal): first left or right, then vertical
     \item V:   (vertical)  : first down- or upward, then horizontal
-  
+}
     The segment(s) on which the arrow head is drawn is set with arr.side, which is one or more values in (1, 2)
     \cr The position of the arrowhead on the segment on which it is drawn, 
     is set with arr.pos, a value between 0(start of segment) and 1(end of segment)
   
     The type of the arrowhead is set with "arr.type" which can take the values:
+  \itemize{
     \item "simple"  : uses comparable R function arrows  
     \item "triangle": uses filled triangle
     \item "curved"  : draws arrowhead with curved edges
     \item "circle" : draws circular head 
-  
+}
     see \code{\link[shape]{Arrowhead}} from package shape for details on arrow head}
 \seealso{\code{\link{straightarrow}}, \code{\link{segmentarrow}}, \code{\link{curvedarrow}}, 
        \code{\link{selfarrow}}, \code{\link{treearrow}}, \code{\link{splitarrow}},    

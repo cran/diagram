@@ -8,6 +8,7 @@
   The Gulf of Riga is a highly eutrophic system in the Baltic Sea.
   
   The foodweb comprises 7 functional compartments: 
+  \itemize{
   \item picoautotrophs (P1)
   \item non-picoautotrophs (P2)
   \item bacteria (B)
@@ -15,11 +16,12 @@
   \item zooplankton (Z)
   \item detritus, including virus (D)
   \item dissolved organic carbon (DOC)
-  
+}
   and two external compartments:
+  \itemize{
   \item CO2
   \item Sedimentation
-  
+}
   These compartments are connected with 26 flows.
   Units of the flows are mg C/m3/day}
 \usage{Rigaweb}
@@ -28,7 +30,7 @@
 \author{Karline Soetaert <k.soetaert@nioo.knaw.nl>}
 \examples{plotweb(Rigaweb,main="Gulf of Riga planktonic food web",
                     sub="mgC/m3/day")}
-\references{\item Donali, E., Olli, K., Heiskanen, A.S., Andersen, T., 1999. Carbon flow 
+\references{Donali, E., Olli, K., Heiskanen, A.S., Andersen, T., 1999. Carbon flow
   patterns in the planktonic food web of the Gulf of Riga, the Baltic Sea: 
   a reconstruction by the inverse method. Journal of Marine Systems 23, pp. 251 268.}
 \seealso{\code{\link{Takapotoweb}}}

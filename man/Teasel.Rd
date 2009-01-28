@@ -6,13 +6,14 @@
   a European perennial weed, as discussed in Caswell (2001), and in Soetaert and Herman, (in prep)
   
   The life cycle of teasel can be described by six stages:
+  \itemize{
   \item dormant seeds < 1yr (DS 1yr)
   \item dormant seeds 1-2yr (DS 2yr)
   \item small rosettes <2.5cm (R small)
   \item medium rosettes 2.5-18.9 cm (R medium)
   \item large rosettes >19 cm (R large)
   \item flowering plants (F)
-  
+}
   The matrix contains the transition probabilities from one compartment (column) to another (row)}
 \usage{Teasel}
 \format{matrix with transition probabilities, where element ij denotes transition from compartment j to i

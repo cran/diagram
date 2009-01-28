@@ -53,11 +53,12 @@
     is set with arr.pos, a value between 0(start of segment) and 1(end of segment)
    
     The type of the arrowhead is set with "arr.type" which can take the values:
+  \itemize{
     \item "simple"  : uses comparable R function arrows  
     \item "triangle": uses filled triangle
     \item "curved"  : draws arrowhead with curved edges
     \item "circle"  : draws circular head 
-  
+}
   	see \code{\link[shape]{Arrowhead}} from package shape for details on arrow head}
 \seealso{\code{\link{straightarrow}}, \code{\link{segmentarrow}}, \code{\link{curvedarrow}}, 
        \code{\link{selfarrow}}, \code{\link{bentarrow}}, \code{\link{treearrow}},    

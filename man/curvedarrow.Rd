@@ -37,11 +37,12 @@
     \cr for instance, curve=0.5 will draw half of a circle. 
   
     The type of the arrowhead is set with "arr.type" which can take the values:
+      \itemize{
     \item "simple"  : uses comparable R function arrows  
     \item "triangle": uses filled triangle
     \item "curved"  : draws arrowhead with curved edges
     \item "circle" : draws circular head 
-  	
+}
     see \code{\link[shape]{Arrowhead}} from package shape for details on arrow head}
 \seealso{\code{\link{straightarrow}}, \code{\link{segmentarrow}}, \code{\link{bentarrow}}, 
        \code{\link{selfarrow}}, \code{\link{treearrow}}, \code{\link{splitarrow}},     

@@ -38,6 +38,7 @@
      and relative size specified with shadow.col and shadow.size respectively.
      
      the type of the box is set with "box.type" which can take on the values: 
+  \itemize{
      \item "rect": a rectangle 
      \item "ellipse": an ellipse 
      \item "diamond": a diamond
@@ -45,7 +46,7 @@
      \item "hexa": a hexagonal shape
      \item "multi": a multigonal shape; also input "nr", the number of angles.
      \item "cylinder": a cylindrical shape; also input "len", the length of the cylinder
-     
+}
     the fill-color of the box is specified with box.col; 
     \cr the line width and color of the box are specified with lwd and lcol}
 \keyword{aplot}

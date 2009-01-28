@@ -36,11 +36,12 @@
     a value between 0 (at start) and 1(at end of circle)
    
     The type of the arrowhead is set with "arr.type" which can take the values:
+  \itemize{
     \item "simple"  : uses comparable R function arrows  
     \item "triangle": uses filled triangle
     \item "curved"  : draws arrowhead with curved edges
     \item "circle" : draws circular head 
-  
+}
   	see \code{\link[shape]{Arrowhead}} for details on arrow head}
 \seealso{\code{\link{straightarrow}},\code{\link{segmentarrow}}\code{\link{curvedarrow}}, 
        \code{\link{bentarrow}},\code{\link{treearrow}}, \code{\link{splitarrow}},    

@@ -27,20 +27,18 @@
 \details{the position of the elements are specified with "pos", which is either NULL,
      or a vector specifying the number of elements on a row, or a 2-columned matrix
      specifying the (x,y) position of each element.
-     
+  \itemize{
      \item when "pos" is NULL, the elements will be arranged on a circle; 
      in this case, the number of elements to be positioned must be specified with N
-     
-     \item when "pos" is a vector, it specifies the number of elements in each row (if hor =TRUE) or 
+     \item when "pos" is a vector, it specifies the number of elements in each row (if hor =TRUE) or
      in each column (if hor = FALSE).
      \cr For instance, with hor=TRUE and pos = c(3,2,1) the elements will be arranged in 3 rows
      (length of vector); on the top row 3 elements; on the second row 2; and on the third row 1
       element will be positioned. All elements within a row are equally distributed horizontally
       all rows are equally distributed vertically;
-      
      \item when "pos" is a matrix, it specifies the x(1st column) and y(2nd column) position
      of each element and is returned as such.
-     
+}
      The offset from the x-axis and from the y-axis can be changed with mx and my}
 \keyword{manip}
 
