@@ -10,8 +10,8 @@
 }
 
 \usage{
-treearrow(from, to, lwd=2, lty=1, lcol="black",
-  arr.side=2, arr.pos=0.5, line.pos=0.5, path="H", ...)
+treearrow(from, to, lwd = 2, lty = 1, lcol = "black", arr.col = lcol, 
+          arr.side = 2, arr.pos = 0.5, line.pos = 0.5, path = "H", ...)
 }
 
 \arguments{
@@ -25,6 +25,8 @@ treearrow(from, to, lwd=2, lty=1, lcol="black",
   \item{lty }{line type.
   }
   \item{lcol }{line color.
+  }
+  \item{arr.col }{arrow color.
   }
   \item{arr.side }{segment number on which arrowhead is drawn (1,2).
   }
@@ -48,21 +50,25 @@ treearrow(from, to, lwd=2, lty=1, lcol="black",
 }
 
 \examples{
-  openplotmat(main="treearrow")
-  pos <- coordinates(c(3,2,4,1))
-  treearrow(from=pos[1:5,],to=pos[6:10,])
-  for (i in 1:10) textrect(pos[i,],lab=i,cex=2,radx=0.05)
+openplotmat(main = "treearrow")
+pos <- coordinates(c(3, 2, 4, 1))
+treearrow(from = pos[1:5, ], to = pos[6:10, ])
+for (i in 1:10) 
+  textrect(pos[i, ], lab = i, cex = 2, radx = 0.05)
   
-  openplotmat(main="treearrow")
-  pos <- coordinates(c(2,4),hor=FALSE)
-  treearrow(from=pos[1:2,],to=pos[3:6,],arr.side=1:2,path="V")
-  for (i in 1:6) textrect(pos[i,],lab=i,cex=2,radx=0.05)
+openplotmat(main = "treearrow")
+pos <- coordinates(c(2, 4), hor = FALSE)
+treearrow(from = pos[1:2, ], to = pos[3:6, ], 
+          arr.side = 1:2, path = "V")
+for (i in 1:6) 
+  textrect(pos[i, ], lab = i, cex = 2, radx = 0.05)
   
-  
-  openplotmat(main="treearrow")
-  pos <- coordinates(c(3,5,7,7,5,3))
-  treearrow(from=pos[1:15,],to=pos[15:30,],arr.side=0)
-  for (i in 1:30) textrect(pos[i,],lab=i,cex=1.2,radx=0.025)
+openplotmat(main = "treearrow")
+pos <- coordinates(c(3, 5, 7, 7, 5, 3))
+treearrow(from = pos[1:15, ], to = pos[15:30, ], arr.side = 0)
+for (i in 1:30) 
+  textrect(pos[i, ], lab = i, cex = 1.2, radx = 0.025)
+
 }
 
 \details{
@@ -90,6 +96,8 @@ treearrow(from, to, lwd=2, lty=1, lcol="black",
     \item "triangle": uses filled triangle.
     \item "curved"  : draws arrowhead with curved edges.
     \item "circle"  : draws circular head.
+    \item "ellipse" : draws ellepsoid head
+    \item "T"       : draws T-shaped (blunt) head
   }
   see \code{\link[shape]{Arrowhead}} from package \code{shape} for details
   on arrow head.

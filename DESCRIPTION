@@ -1,6 +1,6 @@
 Package: diagram
-Version: 1.5
-Date: 2009-10-10
+Version: 1.5.2
+Date: 2011-02-02
 Title: Functions for visualising simple graphs (networks), plotting
         flow diagrams
 Author: Karline Soetaert <k.soetaert@nioo.knaw.nl>
@@ -14,6 +14,8 @@ Description: Visualises simple graphs (networks) based on a transition
         demo(plotmat), demo(plotweb)
 License: GPL (>= 2)
 LazyData: yes
-Packaged: Sun Oct 11 16:20:42 2009; KarlineS
 Repository: CRAN
-Date/Publication: 2009-10-11 14:54:01
+Repository/R-Forge/Project: diagram
+Repository/R-Forge/Revision: 37
+Date/Publication: 2011-03-15 09:52:49
+Packaged: 2011-03-01 21:56:14 UTC; rforge

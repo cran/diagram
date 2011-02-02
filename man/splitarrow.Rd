@@ -6,8 +6,8 @@
   adds an arrowhead at a certain distance
 }
 \usage{
-splitarrow(from, to, lwd=2, lty=1, lcol="black", 
-  arr.side=2, arr.pos=0.5, centre=NULL, dd=0.5, ...)
+splitarrow(from, to, lwd = 2, lty = 1, lcol = "black", arr.col = lcol, 
+           arr.side = 2, arr.pos = 0.5, centre = NULL, dd = 0.5, ...)
 }
 \arguments{
   \item{from }{matrix of coordinates (x,y) of points *from* which to draw arrow.
@@ -19,6 +19,8 @@ splitarrow(from, to, lwd=2, lty=1, lcol="black",
   \item{lty }{line type.
   }
   \item{lcol }{line color.
+  }
+  \item{arr.col }{arrow color.
   }
   \item{arr.side }{segment number on which arrowhead is drawn (1,2).
   }
@@ -40,23 +42,30 @@ splitarrow(from, to, lwd=2, lty=1, lcol="black",
 }
 
 \examples{
-  openplotmat(main="splitarrow")
-  pos <- coordinates(c(1,2,2,4,1))
-  splitarrow(from=pos[1,],to=pos[2:10,],arr.side=1,centre=c(0.5,0.625))
-  for (i in 1:10) textrect(pos[i,],lab=i,cex=2,radx=0.05)
+openplotmat(main = "splitarrow")
+
+pos <- coordinates(c(1, 2, 2, 4, 1))
+splitarrow(from = pos[1, ], to = pos[2:10, ], 
+           arr.side = 1, centre = c(0.5, 0.625))
+for (i in 1:10) 
+  textrect(pos[i, ], lab = i, cex = 2, radx = 0.05)
   
   
-  openplotmat(main="splitarrow")
-  pos <- coordinates(c(1,3))
-  splitarrow(from=pos[1,],to=pos[2:4,],arr.side=1)
-  splitarrow(from=pos[1,],to=pos[2:4,],arr.side=2)
-  for (i in 1:4) textrect(pos[i,],lab=i,cex=2,radx=0.05)
+openplotmat(main = "splitarrow")
+
+pos <- coordinates(c(1, 3))
+splitarrow(from = pos[1,], to = pos[2:4, ], arr.side = 1)
+splitarrow(from = pos[1,], to = pos[2:4, ], arr.side = 2)
+for (i in 1:4) 
+  textrect(pos[i, ], lab = i, cex = 2, radx = 0.05)
   
-  openplotmat(main="splitarrow")
-  pos <- coordinates(N=6)
-  pos <- rbind(c(0.5,0.5),pos)
-  splitarrow(from=pos[1,],to=pos[2:7,],arr.side=2)
-  for (i in 1:7) textrect(pos[i,],lab=i,cex=2,radx=0.05)
+
+openplotmat(main = "splitarrow")
+pos <- coordinates(N = 6)
+pos <- rbind(c(0.5, 0.5), pos)
+splitarrow(from = pos[1, ], to = pos[2:7, ], arr.side = 2)
+for (i in 1:7)
+  textrect(pos[i, ], lab = i, cex = 2, radx = 0.05)
 }
 
 \details{
@@ -90,6 +99,8 @@ splitarrow(from, to, lwd=2, lty=1, lcol="black",
     \item "triangle": uses filled triangle.
     \item "curved"  : draws arrowhead with curved edges.
     \item "circle"  : draws circular head.
+    \item "ellipse" : draws ellepsoid head
+    \item "T"       : draws T-shaped (blunt) head
   }
   see \code{\link[shape]{Arrowhead}} from package shape for details on
   arrow head.
