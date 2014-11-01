@@ -1,5 +1,5 @@
-d74d09d0b49a4a56591dac942d57d6c9 *DESCRIPTION
-a645f9979ea7cd6df3cc033ed7d24df9 *NAMESPACE
+8d07dc612712c20aaa04cd2b05fdf236 *DESCRIPTION
+13472fdd92cac7ff02b0420a9043db93 *NAMESPACE
 5809d6437afb1ff7f694a61dc1175023 *R/bentarrow.R
 931f7b8659434f9daef904633f84e4b7 *R/circuitplot.r
 db06f563e8eda73b7c1879bc576aba3e *R/coordinates.R
@@ -21,10 +21,10 @@ bc210b65f3327600cfb351d881009232 *R/textmulti.R
 c797cbae00bf79c019f54abbb33dc7e3 *R/textrect.R
 2febe3a67e6cacfccfc5f7fc874183d9 *R/textround.R
 7466405aa3f7f00876497071d01bd0c5 *R/treearrow.R
-7e724f5507fe5e7e9332a9e63d84b500 *build/vignette.rds
-77cda39fb7438d8ea320106f2a55c0f5 *data/Teasel.rda
-e68bf938d2b3fbfea97692c82e0da631 *data/rigaweb.rda
-7eaafd0381042dae7fd742086747a19e *data/takapotoweb.rda
+33a70bea073a6f67b765a8caa5df34e7 *build/vignette.rds
+081c8d0aaee20087413356c544686362 *data/Teasel.rda
+05269d8ca37650ad5a9091cccfe4c591 *data/rigaweb.rda
+be006936909cc23145fbba140f0c5a9b *data/takapotoweb.rda
 0e57e03cfb3bcfaf901ae557a86a5e55 *demo/00Index
 76e998092560b73d91a9d888092ca811 *demo/flowchart.r
 8ada45e1fdafd8e3875594106a0e9034 *demo/plotmat.r
@@ -42,7 +42,7 @@ caaef80be42e75915ceb41101dbc9d4d *man/curvedarrow.Rd
 f7ab2466912f550934d192373df21f5d *man/diagram.Rd
 9bdc0f6add058ce741b67ececd20bb99 *man/eNetwork.Rd
 e6578fbcf87b426274af7633d11276d9 *man/openplotmat.Rd
-3575166e18194c5e0b25c8456426ccc7 *man/plotmat.Rd
+6940629ba93b122479b5ab051aa4bc47 *man/plotmat.Rd
 b80c19c67050fbe787bf65a4c40f36c9 *man/plotweb.Rd
 b373fb172a757d52a9a3e6827163ab99 *man/segmentarrow.Rd
 afa6d65e10627033c0096a31458ebfbf *man/selfarrow.Rd
