@@ -17,8 +17,8 @@ plotmat(A, pos = NULL, curve = NULL, name = NULL, absent = 0,
         dtext = 0.3, self.lwd = 1, self.cex = 1, 
         self.shiftx = box.size, self.shifty = NULL, 
         self.arrpos = NULL, arr.lwd = lwd, arr.lcol = lcol, 
-        arr.col = "black", arr.type = "curved", arr.pos = 0.5, 
-        arr.length = 0.4, arr.width = arr.length/2,
+        arr.tcol = lcol, arr.col = "black", arr.type = "curved", 
+        arr.pos = 0.5, arr.length = 0.4, arr.width = arr.length/2,
         endhead = FALSE, mx = 0.0, my = 0.0, box.cex = 1, 
         txt.col = "black", txt.xadj = 0.5, txt.yadj = 0.5,
         txt.font = 1, prefix = "", cex = 1, cex.txt = cex, 
@@ -99,11 +99,14 @@ plotmat(A, pos = NULL, curve = NULL, name = NULL, absent = 0,
   \item{arr.lcol }{color of arrow line, one value, or a matrix with same
     dimensions as \code{A}.
   }
+  \item{arr.tcol }{color of arrow text, one value, or a matrix with same
+    dimensions as \code{A}.
+  }
   \item{arr.col }{color of arrowhead, one value, or a matrix with same
     dimensions as \code{A}.
   }
   \item{arr.type }{type of arrowhead, one of ("curved", "triangle", 
-    "circle", "ellipse", "T", "simple"), one
+    "circle", "ellipse", "T", "simple", "none"), one
     value, or a matrix with same dimensions as \code{A}.
   }
   \item{arr.pos }{relative position of arrowhead on arrow segment/curve, one
@@ -216,26 +219,29 @@ col[] <- "red"
 col[2, 1] <- col[3, 1] <- "blue"
 pp <- plotmat(M, pos = c(1, 2, 1), curve = 0, name = 1:4,
               lwd = 1, box.lwd = 2, box.cex = 1:4, cex.txt = 0.8, 
-              arr.lcol = col, arr.col = col, box.type = "circle",
+              arr.lcol = col, arr.tcol = col, 
+              arr.col = col, box.type = "circle",
               box.prop = 1.0, main = "plotmat")
 
 pp <- plotmat(M, pos = c(1, 2, 1), curve = 0, name = 1:4,
               lwd = 1, box.lwd = 2, box.cex = 1:4, cex.txt = 0.8, 
-              arr.lcol = col, arr.col = col, box.type = "circle",
-              box.prop = 1.0, arr.len = 0.3,
+              arr.lcol = col, arr.tcol = col, arr.col = col, 
+              box.type = "circle", box.prop = 1.0, arr.len = 0.3,
               segment.from = 0.35, segment.to = 0.65)
 
 M[1, 2] <- M[1, 3] <- M[2, 4] <- M[3, 4] <- "f2"
 
 pp <- plotmat(M, pos = c(1, 2, 1), curve = 0.1, name = 1:4,
               lwd = 1, box.lwd = 2, box.cex = 1:4, cex.txt = 0.8, 
-              arr.lcol = col, arr.col = col, box.type = "none",
+              arr.lcol = col, arr.tcol = col, 
+              arr.col = col, box.type = "none",
               box.prop = 1.0, main = "plotmat", arr.len = 0.2,
               segment.from = 0.3, segment.to = 0.7)
 
 pp <- plotmat(M, pos = c(1, 2, 1), curve = 0.1, name = 1:4, 
               box.lwd = 2, box.cex = 1:4, cex.txt = 0.8, 
-              arr.lcol = col, arr.col = col, arr.pos = 0.7,
+              arr.lcol = col, arr.tcol = "green", 
+              arr.col = col, arr.pos = 0.7,
               arr.type = "simple", lwd = 2, box.type = "none",
               box.prop = 1.0, main = "plotmat", arr.len = 0.2,
               segment.from = 0.3, segment.to = 0.7)
@@ -247,7 +253,9 @@ pp <- plotmat(M, pos = c(2, 2), curve = 0, name = LETTERS[1:4],
               lwd = 1, box.lwd = 2, cex.txt = 0.8, self.cex = 0.5,
               self.shiftx = c(-0.1, 0.1, -0.1, 0.1),
               box.type = "diamond", box.prop = 0.5, main = "plotmat")
-  
+
+
+# different arrows  
 M <- matrix(nrow = 4, ncol = 4, data = 0)
 M[2, 1]<- 1 ; M[4, 2] <- 2 ; M[3, 4] <- 3; M[1, 3] <- 4
 pp <- plotmat(M, pos = c(1, 2, 1), curve = 0.2, name = letters[1:4],
@@ -284,6 +292,18 @@ plotmat(M, name = letters[1:4], curve = 0, box.cex = 1:4, box.lwd = 4:1,
         box.col = c("lightblue", "green", "yellow", "orange"))
 
 
+# No arrows, just lines with different colors
+M <- matrix(nrow = 4, ncol = 4, data = 0)
+M[2, 1]<- 1 ; M[4, 2] <- 2 ; M[3, 4] <- 3; M[1, 3] <- 4
+pp <- plotmat(M, pos = c(1, 2, 1), curve = 0.2, name = letters[1:4],
+              lwd = 1, box.lwd = 2, cex.txt = 0.8, arr.type = "none",
+              arr.lcol = M, box.size = 0.1, box.type = "hexa", 
+              box.prop = 0.5, main = "plotmat")
+
+pp <- plotmat(M, pos = c(1, 2, 1), curve = 0.4, name = "",
+              arr.type = "none", arr.lcol = M, 
+              box.type = "none", cex.txt = 0, 
+              main = "plotmat")
 }
 \details{
   The square transition matrix \code{A} determines the number of elements
@@ -375,6 +395,8 @@ plotmat(M, name = letters[1:4], curve = 0, box.cex = 1:4, box.lwd = 4:1,
     \item "circle" : draws circular head 
     \item "ellipse" : draws ellepsoid head
     \item "T"       : draws T-shaped (blunt) head
+    \item "none"    : no arrow head is drawn
+    
   }
   The line color and width of the arrow line is set with \code{arr.lcol} and
   \code{arr.lwd}
